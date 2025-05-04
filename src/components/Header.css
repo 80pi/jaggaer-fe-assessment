@@ -7,8 +7,8 @@
 }
 
 .headerTitle {
-  padding-left: 0.5rem;
-  width: 95%;
+  padding-left: 2rem;
+  width: 92%;
 }
 
 .headerIcons {
@@ -64,4 +64,9 @@
   display: flex;
   justify-content: flex-end;
   width: 8rem;
+}
+
+.itemImageStyle {
+  width: 5rem;
+  height: 5rem;
 }

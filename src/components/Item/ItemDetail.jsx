@@ -3,7 +3,7 @@ import "../Header.css";
 import { useMockData } from "../../context/DataContext";
 import { Box, Fab } from "@mui/material";
 import ImageIcon from "../ImageIcon";
-import attachement from "@resources/icons/attachment.svg";
+import attachement from "@icons/attachment.svg";
 
 const ItemDetail = () => {
   const {

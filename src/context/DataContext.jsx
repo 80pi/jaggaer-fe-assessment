@@ -1,6 +1,6 @@
 // src/context/ThemeContext.jsx
 import React, { createContext, useContext, useState } from "react";
-import mockData from "@resources/data/data.json";
+import mockData from "../assets/resources/data/data.json";
 
 const DataContext = createContext();
 

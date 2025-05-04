@@ -1,10 +1,11 @@
 import React from "react";
-import favorite from "@resources/icons/favorite.svg";
-import cart from "@resources/icons/cart.svg";
-import factsSoft from "@resources/icons/facts-soft.svg";
+import favorite from "@icons/favorite.svg";
+import cart from "@icons/cart.svg";
+import factsSoft from "@icons/facts-soft.svg";
 import ImageIcon from "./ImageIcon";
 import "./Header.css";
 import { useMockData } from "../context/DataContext";
+import Badge from "@mui/material/Badge";
 
 const Header = () => {
   const { mockData } = useMockData();
@@ -15,7 +16,9 @@ const Header = () => {
       <div className="headerIcons">
         <ImageIcon imgPath={favorite} altText={"favorite-icon"} />
         <ImageIcon imgPath={factsSoft} altText={"fact-soft-icon"} />
-        <ImageIcon imgPath={cart} altText={"cart-icon"} />
+        <Badge badgeContent={mockData?.cart?.items} color="error">
+          <ImageIcon imgPath={cart} altText={"cart-icon"} />
+        </Badge>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import packageImg from "@resources/icons/package.svg";
+import packageImg from "@icons/package.svg";
 import "../Header.css";
 
 const ItemImages = () => {
