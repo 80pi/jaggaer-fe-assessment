@@ -55,7 +55,7 @@ const ItemPricingAndShipping = () => {
                   {currency}/{unit}
                 </span>
               </p>
-              <hr />
+              <hr className="itemPriceHr itemSubHeading" />
             </div>
           );
         })}

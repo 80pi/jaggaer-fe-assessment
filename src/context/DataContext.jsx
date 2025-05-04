@@ -11,7 +11,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     resetNotification();
     setNotification(mockData?.cart?.items);
-  }, []);
+  }, [resetNotification, setNotification]);
   return (
     <DataContext.Provider value={{ mockData }}>{children}</DataContext.Provider>
   );
