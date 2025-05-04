@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import { Button, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  styled,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import add from "@icons/add.svg";
 import ImageIcon from "../ImageIcon";
 import useNotification from "../../store/useNotification";
 import ItemAnimation from "./ItemAnimation";
 
-const AddToCartButton = styled(Button)(() => ({
-  backgroundColor: "#E45144",
-  color: "#fff",
-  marginTop: "-1rem",
-  display: "flex",
-  marginLeft: "2rem",
-  position: "relative",
-}));
-
 const ItemToCart = () => {
   const [inputValue, setInputValue] = useState(1);
   const [show, setShow] = useState(false);
   const setNotification = useNotification((state) => state.setNotification);
+
+  const AddToCartButton = styled(Button)(() => ({
+    backgroundColor: "#E45144",
+    color: "#fff",
+    marginLeft: "2rem",
+  }));
 
   const handleAddToCartClick = () => {
     console.log("clilc", inputValue);
@@ -28,33 +32,32 @@ const ItemToCart = () => {
     }, 2000);
   };
   return (
-    <>
-      <input
-        type="number"
-        placeholder="PCE"
-        value={inputValue}
-        onChange={(e) => setInputValue(e?.target?.value)}
-        style={{
-          width: "3rem",
-          display: "flex",
-          justifyContent: "flex-start",
-        }}
-      />{" "}
-      PCE
-      <AddToCartButton
-        id="watched-button"
-        variant="contained"
-        onClick={handleAddToCartClick}
-      >
-        <ImageIcon
-          altText={"add-icon"}
-          imgPath={add}
-          extraStyles={{ color: "white" }}
-        />
-        <p style={{ margin: "0", marginTop: "0.2rem" }}>Add To Cart</p>
-      </AddToCartButton>
-      {show && <ItemAnimation />}
-    </>
+    <Box component="form">
+      <Grid container spacing={7}>
+        <Grid size={{ xs: 2, md: 4 }}>
+          <TextField
+            type="number"
+            label="PCE"
+            id="outlined-size-small"
+            defaultValue={inputValue}
+            size="small"
+            onChange={(e) => setInputValue(e?.target?.value)}
+            sx={{ width: "5rem" }}
+          />
+        </Grid>
+        <Grid size={{ xs: 10, md: 8 }}>
+          <AddToCartButton variant="contained" onClick={handleAddToCartClick}>
+            <ImageIcon
+              altText={"add-icon"}
+              imgPath={add}
+              extraStyles={{ color: "white" }}
+            />
+            <Typography variant="caption">Add to cart</Typography>
+          </AddToCartButton>
+          {show && <ItemAnimation />}
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

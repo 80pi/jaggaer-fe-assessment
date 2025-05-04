@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMockData } from "../../context/DataContext";
 import "../Header.css";
 import discount from "@icons/discount.svg";
 import { Rating } from "@mui/material";
 import ItemToCart from "./ItemToCart";
+import { Box } from "@mui/material";
 
 const ItemDetailDescription = () => {
   const { mockData } = useMockData();
@@ -18,9 +19,10 @@ const ItemDetailDescription = () => {
   } = mockData.article;
 
   return (
-    <div
-      style={{ marginLeft: "2rem", display: "flex", flexDirection: "column" }}
-    >
+    // <div
+    //   style={{ marginLeft: "4rem", display: "flex", flexDirection: "column" }}
+    // >
+    <Box sx={{ flexGrow: 1, marginLeft: "4rem" }}>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <p>{title}</p>
         <p style={{ marginTop: "-1rem" }}>
@@ -50,10 +52,11 @@ const ItemDetailDescription = () => {
         </p>
         <p className="itemSubHeading ulItem">all prices incl. 10 % taxes</p>
       </div>
-      <div style={{ marginTop: "49%", display: "flex", width: "23rem" }}>
+      <div style={{ marginTop: "10%", display: "flex", width: "23rem" }}>
         <ItemToCart />
       </div>
-    </div>
+    </Box>
+    // </div>
   );
 };
 

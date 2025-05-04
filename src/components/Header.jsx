@@ -15,7 +15,6 @@ const Header = () => {
   return (
     <div className="headerContainer headerSticky">
       <h4 className="headerTitle">{mockData?.article?.title}</h4>
-      {/* {!isVisible && <ItemToCart />} */}
       <div className="headerIcons">
         <ImageIcon imgPath={favorite} altText={"favorite-icon"} />
         <ImageIcon imgPath={factsSoft} altText={"fact-soft-icon"} />
