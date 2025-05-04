@@ -7,6 +7,7 @@ import "./Header.css";
 import { useMockData } from "../context/DataContext";
 import Badge from "@mui/material/Badge";
 import useNotification from "../store/useNotification";
+import ItemToCart from "./Item/ItemToCart";
 
 const Header = () => {
   const { mockData } = useMockData();
@@ -14,6 +15,7 @@ const Header = () => {
   return (
     <div className="headerContainer headerSticky">
       <h4 className="headerTitle">{mockData?.article?.title}</h4>
+      {/* {!isVisible && <ItemToCart />} */}
       <div className="headerIcons">
         <ImageIcon imgPath={favorite} altText={"favorite-icon"} />
         <ImageIcon imgPath={factsSoft} altText={"fact-soft-icon"} />

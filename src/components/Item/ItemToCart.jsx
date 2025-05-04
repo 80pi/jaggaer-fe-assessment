@@ -3,8 +3,9 @@ import { Button, styled } from "@mui/material";
 import add from "@icons/add.svg";
 import ImageIcon from "../ImageIcon";
 import useNotification from "../../store/useNotification";
+import ItemAnimation from "./ItemAnimation";
 
-const AddToCartButton = styled(Button)(({ theme }) => ({
+const AddToCartButton = styled(Button)(() => ({
   backgroundColor: "#E45144",
   color: "#fff",
   marginTop: "-1rem",
@@ -12,13 +13,19 @@ const AddToCartButton = styled(Button)(({ theme }) => ({
   marginLeft: "2rem",
   position: "relative",
 }));
+
 const ItemToCart = () => {
   const [inputValue, setInputValue] = useState(1);
+  const [show, setShow] = useState(false);
   const setNotification = useNotification((state) => state.setNotification);
 
   const handleAddToCartClick = () => {
     console.log("clilc", inputValue);
-    setNotification(parseInt(inputValue));
+    setShow(true);
+    setTimeout(() => {
+      setNotification(parseInt(inputValue));
+      setShow(false);
+    }, 2000);
   };
   return (
     <>
@@ -34,7 +41,11 @@ const ItemToCart = () => {
         }}
       />{" "}
       PCE
-      <AddToCartButton variant="contained" onClick={handleAddToCartClick}>
+      <AddToCartButton
+        id="watched-button"
+        variant="contained"
+        onClick={handleAddToCartClick}
+      >
         <ImageIcon
           altText={"add-icon"}
           imgPath={add}
@@ -42,6 +53,7 @@ const ItemToCart = () => {
         />
         <p style={{ margin: "0", marginTop: "0.2rem" }}>Add To Cart</p>
       </AddToCartButton>
+      {show && <ItemAnimation />}
     </>
   );
 };

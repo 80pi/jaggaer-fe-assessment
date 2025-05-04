@@ -42,7 +42,10 @@ const ItemPricingAndShipping = () => {
         </div>
         {Object.entries(price_breaks).map((price, index) => {
           return (
-            <div className="priceBreakingDiv" key={`price-break-${index}`}>
+            <div
+              className="priceBreakingDiv itemPriceHr itemSubHeading"
+              key={`price-break-${index}`}
+            >
               <p className="pricep">
                 <span className="priceBreakSpanRight">
                   ex{price[0]} {unit}
