@@ -3,17 +3,7 @@ import { useMockData } from "../../context/DataContext";
 import "../Header.css";
 import discount from "@icons/discount.svg";
 import { Rating } from "@mui/material";
-import { Button, styled } from "@mui/material";
-import ImageIcon from "../ImageIcon";
-import add from "@icons/add.svg";
-
-const AddToCartButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#E45144",
-  color: "#fff",
-  marginTop: "-1rem",
-  display: "flex",
-  marginLeft: "2rem",
-}));
+import ItemToCart from "./ItemToCart";
 
 const ItemDetailDescription = () => {
   const { mockData } = useMockData();
@@ -26,7 +16,7 @@ const ItemDetailDescription = () => {
     currency,
     stars,
   } = mockData.article;
-  const [inputValue, setInputValue] = useState(1);
+
   return (
     <div
       style={{ marginLeft: "2rem", display: "flex", flexDirection: "column" }}
@@ -60,26 +50,8 @@ const ItemDetailDescription = () => {
         </p>
         <p className="itemSubHeading ulItem">all prices incl. 10 % taxes</p>
       </div>
-      <div style={{ marginTop: "52%", display: "flex", width: "23rem" }}>
-        <input
-          type="number"
-          placeholder="PCE"
-          value={inputValue}
-          style={{
-            width: "3rem",
-            display: "flex",
-            justifyContent: "flex-start",
-          }}
-        />{" "}
-        PCE
-        <AddToCartButton variant="contained">
-          <ImageIcon
-            altText={"add-icon"}
-            imgPath={add}
-            extraStyles={{ color: "white" }}
-          />
-          Add To CArt
-        </AddToCartButton>
+      <div style={{ marginTop: "49%", display: "flex", width: "23rem" }}>
+        <ItemToCart />
       </div>
     </div>
   );
