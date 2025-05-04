@@ -25,11 +25,11 @@ const ItemDetail = () => {
           ))}
         </ul>
         <p className="itemSubHeading">Attachments</p>
-        {attachments.map((item) => {
+        {attachments.map((item, index) => {
           return (
-            <div>
+            <div key={`item-${index}`}>
               <ImageIcon altText={item?.file_name} imgPath={attachement} />
-              <a className="aStyle" href={item?.file_link}>
+              <a className="aStyle" href={item?.file_link} target="_blank">
                 {item?.file_label}
               </a>
             </div>
@@ -37,8 +37,14 @@ const ItemDetail = () => {
         })}
         <p className="itemSubHeading">Keywords</p>
         <Box sx={{ "& > :not(style)": { m: 1 } }}>
-          {keywords.map((keyword) => (
-            <Fab variant="extended" size="small" disabled aria-label="like">
+          {keywords.map((keyword, index) => (
+            <Fab
+              key={`keyword-${index}`}
+              variant="extended"
+              size="small"
+              disabled
+              aria-label="like"
+            >
               {keyword}
             </Fab>
           ))}
