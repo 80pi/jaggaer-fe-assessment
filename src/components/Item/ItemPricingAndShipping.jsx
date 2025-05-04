@@ -22,27 +22,27 @@ const ItemPricingAndShipping = () => {
       <div>
         <ul className="ulItem">
           <li key={`feature-min-order`}>
-            <span className="itemSubHeading">Minimum Order:</span>
+            <span className="itemSubHeading">Minimum Order: </span>
             {minimum_order_quantity} {unit}
           </li>
           <li key={`feature-unit`}>
-            <span className="itemSubHeading">Shipping:</span>
+            <span className="itemSubHeading">Shipping: </span>
             {transport_costs} {currency}
           </li>
           <li key={`feature-delivery-time`}>
-            <span className="itemSubHeading">Delivery Time:</span>
+            <span className="itemSubHeading">Delivery: </span>
             {delivery_time} days
           </li>
         </ul>
         <div className="itemPriceBreak">
           <p className="itemSubHeading">Price breaks</p>
         </div>
-        <p className="itemPriceHr">
+        <div className="itemPriceHr">
           <hr className="itemSubHeading" />
-        </p>
-        {Object.entries(price_breaks).map((price) => {
+        </div>
+        {Object.entries(price_breaks).map((price, index) => {
           return (
-            <div className="priceBreakingDiv">
+            <div className="priceBreakingDiv" key={`price-break-${index}`}>
               <p className="pricep">
                 <span className="priceBreakSpanRight">
                   ex{price[0]} {unit}
