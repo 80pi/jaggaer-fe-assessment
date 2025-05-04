@@ -20,3 +20,48 @@
   margin-bottom: 0rem;
   color: #b1b1b1;
 }
+
+.itemDetailSection {
+  background-color: #fff;
+  width: 45%;
+  padding: 1rem;
+}
+
+.ulItem {
+  margin: 0;
+}
+
+.aStyle {
+  color: #688c9f;
+}
+
+.itemPriceBreak {
+  margin-left: 1.25rem;
+  margin-top: 2rem;
+}
+
+.itemPriceHr {
+  width: 13rem;
+  margin: 0.25rem;
+}
+
+.priceBreakingDiv {
+  width: 38%;
+  margin: 0;
+}
+
+.pricep {
+  margin: 0;
+  display: flex;
+}
+
+.priceBreakSpanRight {
+  display: flex;
+  justify-content: flex-end;
+  width: 5rem;
+}
+.priceBreakSpanLeft {
+  display: flex;
+  justify-content: flex-end;
+  width: 8rem;
+}

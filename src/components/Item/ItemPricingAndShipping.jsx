@@ -17,10 +17,10 @@ const ItemPricingAndShipping = () => {
   } = useMockData();
 
   return (
-    <div style={{ backgroundColor: "#fff", width: "45%", padding: "1rem" }}>
+    <div className="itemDetailSection">
       <h4 className="headerContainer">PRICING & SHIPPING</h4>
       <div>
-        <ul style={{ margin: "0" }}>
+        <ul className="ulItem">
           <li key={`feature-min-order`}>
             <span className="itemSubHeading">Minimum Order:</span>
             {minimum_order_quantity} {unit}
@@ -34,32 +34,20 @@ const ItemPricingAndShipping = () => {
             {delivery_time} days
           </li>
         </ul>
-        <div style={{ marginLeft: "1.25rem", marginTop: "2rem" }}>
+        <div className="itemPriceBreak">
           <p className="itemSubHeading">Price breaks</p>
         </div>
-        <p style={{ width: "13rem", margin: "0.25rem" }}>
+        <p className="itemPriceHr">
           <hr className="itemSubHeading" />
         </p>
         {Object.entries(price_breaks).map((price) => {
           return (
-            <div style={{ width: "38%", margin: "0" }}>
-              <p style={{ margin: "0", display: "flex" }}>
-                <span
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    width: "5rem",
-                  }}
-                >
+            <div className="priceBreakingDiv">
+              <p className="pricep">
+                <span className="priceBreakSpanRight">
                   ex{price[0]} {unit}
                 </span>{" "}
-                <span
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    width: "8rem",
-                  }}
-                >
+                <span className="priceBreakSpanLeft">
                   {price[1].toLocaleString("en-US")}
                   {currency}/{unit}
                 </span>

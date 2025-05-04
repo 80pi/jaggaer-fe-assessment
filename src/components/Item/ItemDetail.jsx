@@ -13,11 +13,11 @@ const ItemDetail = () => {
   } = useMockData();
 
   return (
-    <div style={{ backgroundColor: "#fff", width: "45%", padding: "1rem" }}>
+    <div className="itemDetailSection">
       <h4 className="headerContainer">DETAILS</h4>
       <div>
         <p className="itemSubHeading">Features</p>
-        <ul style={{ margin: "0" }}>
+        <ul className="ulItem">
           {Object.entries(features).map((feature, index) => (
             <li key={`feature-${index}`}>
               <span className="itemSubHeading">{feature[0]}</span>: {feature[1]}
@@ -29,7 +29,7 @@ const ItemDetail = () => {
           return (
             <div>
               <ImageIcon altText={item?.file_name} imgPath={attachement} />
-              <a style={{ color: "#688C9F" }} href={item?.file_link}>
+              <a className="aStyle" href={item?.file_link}>
                 {item?.file_label}
               </a>
             </div>
