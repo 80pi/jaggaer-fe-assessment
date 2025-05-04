@@ -1,0 +1,21 @@
+.headerContainer {
+  display: flex;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+  color: #ea9189;
+}
+
+.headerTitle {
+  padding-left: 0.5rem;
+  width: 95%;
+}
+
+.headerIcons {
+  display: flex;
+  margin-top: 0.9rem;
+}
+
+.itemSubHeading {
+  margin-bottom: 0rem;
+}
