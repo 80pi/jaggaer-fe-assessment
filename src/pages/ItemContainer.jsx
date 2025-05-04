@@ -4,10 +4,10 @@ import ItemDescriptionContainer from "./ItemDescriptionContainer";
 
 const ItemContainer = () => {
   return (
-    <>
+    <div style={{ marginTop: "6rem" }}>
       <ItemView />
       <ItemDescriptionContainer />
-    </>
+    </div>
   );
 };
 

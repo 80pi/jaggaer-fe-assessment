@@ -6,6 +6,11 @@
   color: #e3766b;
 }
 
+.headerSticky {
+  position: fixed;
+  top: 0;
+}
+
 .headerTitle {
   padding-left: 2rem;
   width: 92%;

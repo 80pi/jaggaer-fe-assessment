@@ -11,7 +11,7 @@ const Header = () => {
   const { mockData } = useMockData();
   console.log(mockData);
   return (
-    <div className="headerContainer">
+    <div className="headerContainer headerSticky">
       <h4 className="headerTitle">{mockData?.article?.title}</h4>
       <div className="headerIcons">
         <ImageIcon imgPath={favorite} altText={"favorite-icon"} />
