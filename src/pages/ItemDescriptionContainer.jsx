@@ -1,6 +1,6 @@
 import React from "react";
 import ItemDetail from "../components/Item/ItemDetail";
-import ItemPricing from "../components/Item/ItemPricing";
+import ItemPricing from "../components/Item/ItemPricingAndShipping";
 import { useMockData } from "../context/DataContext";
 
 const ItemDescriptionContainer = () => {
@@ -11,7 +11,7 @@ const ItemDescriptionContainer = () => {
         <h5 style={{ color: "#ea9189" }}>DESCRIPTION</h5>
         <p>{mockData?.article?.description_short}</p>
         <p>{mockData?.article?.description_long}</p>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <ItemDetail />
           <ItemPricing />
         </div>

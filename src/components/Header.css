@@ -3,7 +3,7 @@
   background-color: #ffffff;
   width: 100%;
   border-bottom: 2px solid #efefef;
-  color: #ea9189;
+  color: #e3766b;
 }
 
 .headerTitle {
@@ -18,4 +18,5 @@
 
 .itemSubHeading {
   margin-bottom: 0rem;
+  color: #b1b1b1;
 }
