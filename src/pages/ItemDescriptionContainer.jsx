@@ -1,6 +1,6 @@
 import React from "react";
 import ItemDetail from "../components/Item/ItemDetail";
-import ItemPricing from "../components/Item/ItemPricingAndShipping";
+import ItemPricingAndShipping from "../components/Item/ItemPricingAndShipping";
 import { useMockData } from "../context/DataContext";
 
 const ItemDescriptionContainer = () => {
@@ -13,7 +13,7 @@ const ItemDescriptionContainer = () => {
         <p>{mockData?.article?.description_long}</p>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <ItemDetail />
-          <ItemPricing />
+          <ItemPricingAndShipping />
         </div>
       </div>
     </div>
