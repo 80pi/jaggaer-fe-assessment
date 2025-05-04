@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMockData } from "../../context/DataContext";
 import "../Header.css";
 import discount from "@icons/discount.svg";
@@ -26,6 +26,7 @@ const ItemDetailDescription = () => {
     currency,
     stars,
   } = mockData.article;
+  const [inputValue, setInputValue] = useState(1);
   return (
     <div
       style={{ marginLeft: "2rem", display: "flex", flexDirection: "column" }}
@@ -63,6 +64,7 @@ const ItemDetailDescription = () => {
         <input
           type="number"
           placeholder="PCE"
+          value={inputValue}
           style={{
             width: "3rem",
             display: "flex",
